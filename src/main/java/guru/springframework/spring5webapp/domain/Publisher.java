@@ -20,8 +20,6 @@ public class Publisher {
     private String state;
     private String zip;
 
-    @OneToMany
-    @JoinColumn(name = "publisher_id")
     public Set<Book> getBooks() {
         return books;
     }
@@ -30,6 +28,8 @@ public class Publisher {
         this.books = books;
     }
 
+    @OneToMany
+    @JoinColumn(name = "publisher_id")
     private Set<Book> books = new HashSet<>( );
 
     public Publisher() {
